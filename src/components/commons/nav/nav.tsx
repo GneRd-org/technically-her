@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { Logo } from "../../../assets";
 import { ChildrenProps } from "../../../types";
 import { FiMenu } from "react-icons/fi";
-import { FaGraduationCap } from "react-icons/fa";
+import { MdLightMode } from "react-icons/md";
 
 export const Nav = ({ children }: ChildrenProps) => {
   const navigate = useNavigate();
@@ -18,11 +18,11 @@ export const Nav = ({ children }: ChildrenProps) => {
 
   const DropdownMenu = () => (
     <div className="flex min-h-[64px] items-center justify-end px-3 text-white">
-      <Menu as="div" className="relative inline-block text-left">
+      <MdLightMode size="25px"/>
+      <Menu as="div" className="relative inline-block text-lef">
         <div>
           <Menu.Button className="inline-flex w-full justify-center rounded-md px-4 py-2 text-sm font-medium focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75">
-            John Doe <FiMenu />
-            <FaGraduationCap size={34} />
+            <FiMenu size="25px"/>
           </Menu.Button>
         </div>
         <Transition
@@ -75,7 +75,7 @@ export const Nav = ({ children }: ChildrenProps) => {
     <div className="flex h-screen w-screen flex-col">
       <div className="flex items-center justify-between bg-primaryDark px-2">
         <div className="hidden w-1/5 items-center justify-between sm:visible sm:flex">
-          <img src={Logo} alt="logo" className="w-24" />
+          <img src={Logo} alt="logo" className="w-30" />
         </div>
         <div className="w-2/5 bg-primaryDark">
           <DropdownMenu />
