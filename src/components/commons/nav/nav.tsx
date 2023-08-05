@@ -82,7 +82,7 @@ export const Nav = ({ children }: ChildrenProps) => {
         </div>
       </div>
 
-      <div className="bg-secondaryDark h-full">{children}</div>
+      <div className="bg-secondaryDark h-full px-12">{children}</div>
     </div>
   );
 };
