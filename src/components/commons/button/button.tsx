@@ -1,8 +1,14 @@
-import React, { FC } from "react";
+import { FC } from "react";
 import { ChildrenProps } from "../../../types";
+interface ButtonProps extends ChildrenProps {
+  buttonType: "clear" | "secondary";
+}
+export const Button: FC<ButtonProps> = ({ children, buttonType }) => {
+  console.log(buttonType);
 
-export const Button: FC<ChildrenProps> = ({ children }) => {
   return (
-    <button className="bg-blue-400 rounded-lg px-6 py-2">{children}</button>
+    <button className={`${"bg-blue-400"} rounded-lg px-6 py-2`}>
+      {children}
+    </button>
   );
 };
