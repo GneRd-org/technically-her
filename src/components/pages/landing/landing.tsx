@@ -1,5 +1,5 @@
 import { CiUnlock } from "react-icons/ci";
-import { Card, Footer } from "../..";
+import { Button, Card, Footer } from "../..";
 import { Learner } from "../../../assets";
 
 export const Landing = () => {
@@ -15,6 +15,7 @@ export const Landing = () => {
             Get started on your tech journey with TechnicallyHER, where
             empowerment meets innovation!
           </p>
+          <Button>Get Started</Button>
         </section>
         <img src={Learner} alt="learner" />
       </section>

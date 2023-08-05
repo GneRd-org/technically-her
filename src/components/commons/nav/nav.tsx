@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { Logo } from "../../../assets";
 import { ChildrenProps } from "../../../types";
 import { FiMenu } from "react-icons/fi";
+import { FaGraduationCap } from "react-icons/fa";
 
 export const Nav = ({ children }: ChildrenProps) => {
   const navigate = useNavigate();
@@ -20,9 +21,9 @@ export const Nav = ({ children }: ChildrenProps) => {
       <Menu as="div" className="relative inline-block text-left">
         <div>
           <Menu.Button className="inline-flex w-full justify-center rounded-md px-4 py-2 text-sm font-medium focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75">
-            John Doe
+            John Doe <FiMenu />
+            <FaGraduationCap size={34} />
           </Menu.Button>
-          <FiMenu />
         </div>
         <Transition
           as={Fragment}

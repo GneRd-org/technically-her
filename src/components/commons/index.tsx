@@ -5,3 +5,4 @@ export * from "./side-nav/side-nav";
 export * from "./navigator/navigator";
 export * from "./footer/footer";
 export * from "./card/card";
+export * from "./button/button";
