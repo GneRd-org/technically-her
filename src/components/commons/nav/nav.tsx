@@ -16,12 +16,12 @@ export const Nav = ({ children }: ChildrenProps) => {
   };
 
   const DropdownMenu = () => (
-    <div className="flex min-h-[64px] items-center justify-end px-3 bg-primaryDark text-white">
+    <div className="flex min-h-[64px] items-center justify-end px-3 text-white">
       <Menu as="div" className="relative inline-block text-left">
         <div>
-          <Menu.Button className="inline-flex w-full text-teal-400 justify-center rounded-md px-4 py-2 text-sm font-medium focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75">
+          <Menu.Button className="inline-flex w-full justify-center rounded-md px-4 py-2 text-sm font-medium focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75">
             John Doe
-          </Menu.Button>{" "}
+          </Menu.Button>
           <FiMenu />
         </div>
         <Transition
@@ -40,7 +40,7 @@ export const Nav = ({ children }: ChildrenProps) => {
                   <button
                     type="button"
                     className={`${
-                      active ? "" : "text-teal-400"
+                      active ? "" : ""
                     } group flex w-full items-center rounded-md px-2 py-2 text-sm`}
                     onClick={goToProfile}
                   >
