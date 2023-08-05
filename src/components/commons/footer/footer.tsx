@@ -1,10 +1,8 @@
-import React from "react";
-
 export const Footer = () => {
   return (
-    <footer className="text-xs justify-center">
-      <p>Privacy Policy | Terms of ServiceCopyright © 2023 Technically HER.</p>
-      <p>All rights reserved.</p>
+    <footer className="text-xs justify-center items-center">
+      <p className="font-bold">Privacy Policy | Terms of Service</p>
+      <p>Copyright © 2023 Technically HER. All rights reserved.</p>
     </footer>
   );
 };

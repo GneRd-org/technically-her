@@ -4,7 +4,7 @@ import { Learner } from "../../../assets";
 
 export const Home = () => {
   return (
-    <main>
+    <main className="h-screen">
       <section className="bg-secondaryDark flex items-center">
         <section>
           <h1 className="text-5xl">
