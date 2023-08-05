@@ -1,7 +1,10 @@
-import { FC, Suspense } from "react";
+import { Suspense } from "react";
 import { Loader } from "..";
-import { ChildrenProps } from "@gnerd/types";
 
-export const Loadable: FC<ChildrenProps> = ({ children }) => (
-  <Suspense fallback={<Loader />}>{children}</Suspense>
-);
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export const Loadable = (Component: any) => (props: JSX.IntrinsicAttributes) =>
+  (
+    <Suspense fallback={<Loader />}>
+      <Component {...props} />
+    </Suspense>
+  );
