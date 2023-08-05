@@ -15,7 +15,7 @@ export const Landing = () => {
             Get started on your tech journey with TechnicallyHER, where
             empowerment meets innovation!
           </p>
-          <Button>Get Started</Button>
+          <Button buttonType={"common"}>Get Started</Button>
         </section>
         <img src={Learner} alt="learner" />
       </section>
