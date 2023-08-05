@@ -1,1 +1,2 @@
-export * from "./root-route";
+export * from "./routes";
+export * from "./index-route";
