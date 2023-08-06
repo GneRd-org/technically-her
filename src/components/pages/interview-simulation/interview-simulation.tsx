@@ -68,7 +68,7 @@ export const InterviewSimulation = () => {
           </h2>
           <textarea
             onChange={(e) => setQuestion(e.target.value)}
-            className="w-1/2 bg-primaryDark text-white p-2"
+            className="w-full h-50 bg-primaryDark text-white p-2"
             value={transcript}
             placeholder="Your answer will show here...."
           ></textarea>
@@ -103,7 +103,10 @@ export const InterviewSimulation = () => {
       </section>
 
       <section className="overflow-y-auto">
-        <h1>Feedback and Improvements</h1>
+        <header className="pb-4">
+          <h1 className="text-3xl">Feedback and Improvements</h1>
+          <div className="h-1 w-16 rounded-sm bg-gradient-to-r from-[#7467F0] to-[#2896E9]" />
+        </header>
         <p>{response}</p>
       </section>
     </main>

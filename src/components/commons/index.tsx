@@ -8,3 +8,4 @@ export * from "./card/card";
 export * from "./button/button";
 export * from "./job-posting/job-posting";
 export * from "./company-profile/company-profile";
+export * from "./avatar/avatar";

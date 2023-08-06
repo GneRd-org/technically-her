@@ -74,6 +74,21 @@ export const Nav = ({ children }: ChildrenProps) => {
                     )}
                   </Menu.Item>
                 </div>
+                <div className="px-1 py-1">
+                  <Menu.Item>
+                    {({ active }) => (
+                      <button
+                        type="button"
+                        className={`${
+                          active ? "text-teal-400" : "text-white"
+                        } group flex w-full items-center rounded-md px-2 py-2 text-sm`}
+                        onClick={() => navigate("/company-culture")}
+                      >
+                        Company culture analysis
+                      </button>
+                    )}
+                  </Menu.Item>
+                </div>
               </>
             )}
             {path !== "/" ? (
@@ -116,8 +131,8 @@ export const Nav = ({ children }: ChildrenProps) => {
   );
 
   return (
-    <div className="flex h-screen w-screen flex-col">
-      <div className="flex items-center justify-between w-screen bg-primaryDark px-2">
+    <div className="flex h-screen w-screen flex-col bg-secondaryDark">
+      <div className="flex items-center justify-between w-screen bg-primaryDark px-2 mb-4">
         <div className="hidden w-1/5 items-center justify-between sm:visible sm:flex">
           <img src={Logo} alt="logo" className="w-30" />
         </div>
