@@ -1,10 +1,24 @@
 import { BsFillUnlockFill } from "react-icons/bs";
 import { FaGraduationCap } from "react-icons/fa";
-import { FaTrophy} from "react-icons/fa";
+import { FaTrophy } from "react-icons/fa";
 import { Button, Card, Footer } from "../..";
 import { Learner } from "../../../assets";
+import { AuthService } from "../../../service";
+import { toast } from "react-hot-toast";
+//import { useNavigate } from "react-router-dom";
 
 export const Landing = () => {
+  //const navigate = useNavigate();
+  const handleSignIn = () => {
+    AuthService.signInWithGitHub().then((res) => {
+      console.log(res);
+      if (res) {
+        toast.success("Signed in successfully");
+      }
+    });
+    /*     if (data) toast.success("Signed in successfully");
+    if (error) toast.error("Failed to sign in"); */
+  };
   return (
     <main className="h-screen">
       <section className="bg-secondaryDark flex items-center py-2">
@@ -17,7 +31,9 @@ export const Landing = () => {
             Get started on your tech journey with TechnicallyHER, where
             empowerment meets innovation!
           </p>
-          <Button buttonType={"common"}>Get Started</Button>
+          <Button buttonType="common" onClick={() => handleSignIn()}>
+            Get Started
+          </Button>
         </section>
         <img src={Learner} alt="learner" />
       </section>
@@ -31,7 +47,7 @@ export const Landing = () => {
           text="Ace tech job interviews with confidence! Our AI-driven simulations and personalized coaching prepare you to land your dream role."
         />
         <Card
-          image={<FaTrophy size={40}/>}
+          image={<FaTrophy size={40} />}
           text="For companies, we provide tools to promote diversity and eliminate gender bias in the hiring process. Our platform empowers recruiters to make informed and unbiased hiring decisions."
         />
       </section>
