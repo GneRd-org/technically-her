@@ -24,7 +24,7 @@ export const Button: FC<ButtonProps> = ({
       style += "bg-[#90CDF4]";
   }
   return (
-    <button {...rest} className={style + " rounded-lg py-3 px-3"}>
+    <button {...rest} className={style + " rounded-lg py-3 px-3 w-full"}>
       <section className="flex items-center gap-2">
         {icon ? icon : <></>}
         {children}
