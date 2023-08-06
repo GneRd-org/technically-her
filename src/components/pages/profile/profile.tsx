@@ -55,7 +55,13 @@ export const Profile = () => {
                 Excellence
               </span>
               <span className=" text-xs border p-1 border-teal-200 rounded-xl">
+                Growth
+              </span>
+              <span className=" text-xs border p-1 border-teal-200 rounded-xl">
                 Kindness
+              </span>
+              <span className=" text-xs border p-1 border-teal-200 rounded-xl">
+                Innovation
               </span>
             </section>
           </section>

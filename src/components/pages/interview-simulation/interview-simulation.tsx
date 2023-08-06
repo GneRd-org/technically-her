@@ -66,7 +66,7 @@ export const InterviewSimulation = () => {
           <textarea
             onChange={(e) => setQuestion(e.target.value)}
             className="w-full h-50 bg-primaryDark text-white p-2"
-            value={transcript}
+            defaultValue={transcript}
             placeholder="Your answer will show here...."
           ></textarea>
         </section>
@@ -90,16 +90,16 @@ export const InterviewSimulation = () => {
           >
             Stop Recording
           </Button>
-          <Button buttonType="common" onClick={resetTranscript}>
-            Clear Transcript
-          </Button>
           <Button
-            buttonType="submit"
+            buttonType="common"
             onClick={() => {
-              setAskedQuestion("");
-              handleSubmit({ preventDefault: () => {} });
+              resetTranscript();
+              setQuestion("");
             }}
           >
+            Clear Transcript
+          </Button>
+          <Button buttonType="submit" onClick={handleSubmit}>
             Submit
           </Button>
         </section>

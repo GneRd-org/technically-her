@@ -15,13 +15,13 @@ export const Button: FC<ButtonProps> = ({
   let style = "";
   switch (buttonType) {
     case "submit":
-      style += "bg-[#76FA55]";
+      style += "bg-[#76FA55] hover:bg-[#5DEB4F]";
       break;
     case "stop":
-      style += "bg-[#DD5159]";
+      style += "bg-[#DD5159] hover:bg-[#C43C44]";
       break;
     default:
-      style += "bg-[#90CDF4]";
+      style += "bg-[#90CDF4] hover:bg-[#63B3ED]";
   }
   return (
     <button {...rest} className={style + " rounded-lg py-3 px-3 w-full"}>
