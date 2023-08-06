@@ -21,7 +21,7 @@ export const Landing = () => {
         </section>
         <img src={Learner} alt="learner" />
       </section>
-      <section className="flex justify-between items-center gap-5 bg-primaryDark min-h-[240px] px-20">
+      <section className="flex justify-between items-center gap-5 bg-primaryDark min-h-[240px] px-20 ">
         <Card
           image={<BsFillUnlockFill size={40} />}
           text="Unlock your potential with our comprehensive upskilling courses. Master coding languages and cutting-edge tech trends for the skills the industry demands."
@@ -35,7 +35,7 @@ export const Landing = () => {
           text="For companies, we provide tools to promote diversity and eliminate gender bias in the hiring process. Our platform empowers recruiters to make informed and unbiased hiring decisions."
         />
       </section>
-      <section className="bg-secondaryDark justify-center flex items-center">
+      <section className="bg-secondaryDark justify-center flex items-center text-center">
         <Footer />
       </section>
     </main>
