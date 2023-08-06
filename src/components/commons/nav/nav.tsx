@@ -11,7 +11,7 @@ import toast from "react-hot-toast";
 export const Nav = ({ children }: ChildrenProps) => {
   const navigate = useNavigate();
   const path = window.location.pathname;
-  console.log(path);
+
   const signOut = () => {
     AuthService.signOut().then(() => {
       toast.success("Signing out....");
