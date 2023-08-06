@@ -6,3 +6,4 @@ export * from "./navigator/navigator";
 export * from "./footer/footer";
 export * from "./card/card";
 export * from "./button/button";
+export * from "./job-posting/job-posting";
