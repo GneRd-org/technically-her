@@ -1,14 +1,16 @@
-import { CiUnlock } from "react-icons/ci";
+import { BsFillUnlockFill } from "react-icons/bs";
+import { FaGraduationCap } from "react-icons/fa";
+import { FaTrophy} from "react-icons/fa";
 import { Button, Card, Footer } from "../..";
 import { Learner } from "../../../assets";
 
 export const Landing = () => {
   return (
     <main className="h-screen">
-      <section className="bg-secondaryDark flex items-center">
+      <section className="bg-secondaryDark flex items-center py-2">
         <section>
           <h1 className="text-5xl">
-            Technically<span className="text-teal-400 ">Her</span>
+            Technically<span className="text-teal-400">Her</span>
           </h1>
           <h2 className="text-4xl">Progressive Advancement!</h2>
           <p>
@@ -21,19 +23,19 @@ export const Landing = () => {
       </section>
       <section className="flex justify-between items-center gap-5 bg-primaryDark min-h-[240px] px-20">
         <Card
-          image={<CiUnlock size={40} />}
+          image={<BsFillUnlockFill size={40} />}
           text="Unlock your potential with our comprehensive upskilling courses. Master coding languages and cutting-edge tech trends for the skills the industry demands."
         />
         <Card
-          image={<CiUnlock />}
+          image={<FaGraduationCap size={40} />}
           text="Ace tech job interviews with confidence! Our AI-driven simulations and personalized coaching prepare you to land your dream role."
         />
         <Card
-          image={<CiUnlock />}
+          image={<FaTrophy size={40}/>}
           text="For companies, we provide tools to promote diversity and eliminate gender bias in the hiring process. Our platform empowers recruiters to make informed and unbiased hiring decisions."
         />
       </section>
-      <section className="bg-secondaryDark justify-center flex">
+      <section className="bg-secondaryDark justify-center flex items-center">
         <Footer />
       </section>
     </main>
