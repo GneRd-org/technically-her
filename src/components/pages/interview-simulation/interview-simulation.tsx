@@ -55,25 +55,26 @@ export const InterviewSimulation = () => {
           We'll transcribe your responses for your review and feedback.
         </p>
       </section>
-      <section>
-        <h2 className="text-3xl">
-          {
-            interviewQuestions[
-              Math.floor(Math.random() * interviewQuestions.length)
-            ]
-          }
-        </h2>
-      </section>
-      <section className="flex gap-3 bg-secondaryDark justify-evenly">
-        <textarea
-          onChange={(e) => setQuestion(e.target.value)}
-          className="w-1/2 bg-primaryDark text-white p-2"
-          value={transcript}
-          placeholder="Your answer will show here...."
-        ></textarea>
 
+      <section className="flex gap-3 bg-secondaryDark justify-evenly">
+        <section className="">
+          <h2 className="text-xl">
+            Question:{" "}
+            {
+              interviewQuestions[
+                Math.floor(Math.random() * interviewQuestions.length)
+              ]
+            }
+          </h2>
+          <textarea
+            onChange={(e) => setQuestion(e.target.value)}
+            className="w-1/2 bg-primaryDark text-white p-2"
+            value={transcript}
+            placeholder="Your answer will show here...."
+          ></textarea>
+        </section>
         <section className="flex flex-col gap-2">
-          <p>Microphone: {listening ? "on" : "off"}</p>
+          <p>{listening ? "Recording...." : "off"}</p>
           <Button
             icon={<BsFillPlayFill size={30} style={{ color: "#0F172A" }} />}
             buttonType="common"

@@ -42,36 +42,40 @@ export const Nav = ({ children }: ChildrenProps) => {
           leaveTo="transform opacity-0 scale-95"
         >
           <Menu.Items className="absolute right-0 z-50 mt-2 w-56 origin-top-right divide-y divide-gray-100 rounded-md bg-secondaryDark shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
-            <div className="px-1 py-1">
-              <Menu.Item>
-                {({ active }) => (
-                  <button
-                    type="button"
-                    className={`${
-                      active ? "text-teal-400" : "text-white"
-                    } group flex w-full items-center rounded-md px-2 py-2 text-sm`}
-                    onClick={goToProfile}
-                  >
-                    Profile
-                  </button>
-                )}
-              </Menu.Item>
-            </div>
-            <div className="px-1 py-1">
-              <Menu.Item>
-                {({ active }) => (
-                  <button
-                    type="button"
-                    className={`${
-                      active ? "text-teal-400" : "text-white"
-                    } group flex w-full items-center rounded-md px-2 py-2 text-sm`}
-                    onClick={() => navigate("/interviews")}
-                  >
-                    Interviews
-                  </button>
-                )}
-              </Menu.Item>
-            </div>
+            {path !== "/" && (
+              <>
+                <div className="px-1 py-1">
+                  <Menu.Item>
+                    {({ active }) => (
+                      <button
+                        type="button"
+                        className={`${
+                          active ? "text-teal-400" : "text-white"
+                        } group flex w-full items-center rounded-md px-2 py-2 text-sm`}
+                        onClick={goToProfile}
+                      >
+                        Profile
+                      </button>
+                    )}
+                  </Menu.Item>
+                </div>
+                <div className="px-1 py-1">
+                  <Menu.Item>
+                    {({ active }) => (
+                      <button
+                        type="button"
+                        className={`${
+                          active ? "text-teal-400" : "text-white"
+                        } group flex w-full items-center rounded-md px-2 py-2 text-sm`}
+                        onClick={() => navigate("/interviews")}
+                      >
+                        Interviews
+                      </button>
+                    )}
+                  </Menu.Item>
+                </div>
+              </>
+            )}
             {path !== "/" ? (
               <div className="px-1 py-1">
                 <Menu.Item>
