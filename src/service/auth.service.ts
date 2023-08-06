@@ -9,16 +9,24 @@ async function signInWithGitHub() {
   const { data, error } = await supabase.auth.signInWithOAuth({
     provider: "github",
   });
-  if (error) return false;
-  return data;
+  return { data, error };
 }
-async function signout() {
+async function signOut() {
   const { error } = await supabase.auth.signOut();
   if (error) return false;
   else true;
 }
 
+const isAuthenticated = async () => {
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+  if (user) return true;
+  else return false;
+};
+
 export default {
   signInWithGitHub,
-  signout,
+  signOut,
+  isAuthenticated,
 };

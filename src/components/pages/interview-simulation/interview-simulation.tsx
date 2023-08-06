@@ -15,11 +15,12 @@ export const InterviewSimulation = () => {
   } = useSpeechRecognition();
   const [question, setQuestion] = useState(
     "If I was asked this question: " +
-      "Tell me about a challenge or conflict you've faced at work, and how you dealt with it.? " +
+      "What's a project that you really enjoyed building? " +
       "Does my answer follow the STAR method? What can I improve? My Anwser:" +
       transcript
   );
   const [interviewQuestions, setInterviewQuestions] = useState([
+    "What's a project that you really enjoyed building?",
     "Tell me about a challenge or conflict you've faced at work, and how you dealt with it.",
   ]);
 
@@ -100,7 +101,7 @@ export const InterviewSimulation = () => {
         </section>
       </section>
 
-      <section>
+      <section className="overflow-y-auto">
         <h1>Feedback and Improvements</h1>
         <p>{response}</p>
       </section>

@@ -5,19 +5,23 @@ import { Card, Footer } from "../..";
 import { Learner } from "../../../assets";
 import { AuthService } from "../../../service";
 import { toast } from "react-hot-toast";
-//import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 
 export const Landing = () => {
-  //const navigate = useNavigate();
-  const handleSignIn = () => {
-    AuthService.signInWithGitHub().then((res) => {
-      console.log(res);
+  const navigate = useNavigate();
+  useEffect(() => {
+    AuthService.isAuthenticated().then((res) => {
       if (res) {
         toast.success("Signed in successfully");
+        navigate("/home");
       }
     });
-    /*     if (data) toast.success("Signed in successfully");
-    if (error) toast.error("Failed to sign in"); */
+  }, [navigate]);
+  const handleSignIn = () => {
+    AuthService.signInWithGitHub().then((res) => {
+      if (res.error) toast.error("Failed to sign in");
+    });
   };
   return (
     <main className="h-screen">
