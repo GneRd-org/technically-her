@@ -4,8 +4,14 @@ interface ButtonProps extends ChildrenProps {
   buttonType: "stop" | "submit" | "common";
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   onClick: (arg0: any) => any;
+  icon?: JSX.Element;
 }
-export const Button: FC<ButtonProps> = ({ children, buttonType, ...rest }) => {
+export const Button: FC<ButtonProps> = ({
+  children,
+  buttonType,
+  icon,
+  ...rest
+}) => {
   let style = "";
   switch (buttonType) {
     case "submit":
@@ -19,7 +25,10 @@ export const Button: FC<ButtonProps> = ({ children, buttonType, ...rest }) => {
   }
   return (
     <button {...rest} className={style + " rounded-lg py-3 px-3"}>
-      {children}
+      <section className="flex items-center gap-2">
+        {icon ? icon : <></>}
+        {children}
+      </section>
     </button>
   );
 };
