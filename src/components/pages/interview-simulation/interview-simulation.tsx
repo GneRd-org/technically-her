@@ -4,6 +4,7 @@ import SpeechRecognition, {
 import { Button } from "../..";
 import { BsFillPlayFill, BsFillStopFill } from "react-icons/bs";
 import { useState } from "react";
+import api from "../../../api/api";
 
 export const InterviewSimulation = () => {
   const {
@@ -13,13 +14,38 @@ export const InterviewSimulation = () => {
     browserSupportsSpeechRecognition,
   } = useSpeechRecognition();
   const [question, setQuestion] = useState(
-    "What challenges did you face in a group project?"
+    "If I was asked this question: " +
+      "Tell me about a challenge or conflict you've faced at work, and how you dealt with it.? " +
+      "Does my answer follow the STAR method? What can I improve? My Anwser:" +
+      transcript
   );
+  const [interviewQuestions, setInterviewQuestions] = useState([
+    "Tell me about a challenge or conflict you've faced at work, and how you dealt with it.",
+  ]);
+
+  const [response, setResponse] = useState("");
   if (!browserSupportsSpeechRecognition) {
     return <span>Browser doesn't support speech recognition.</span>;
   }
+
+  const handleSubmit = async (e: { preventDefault: () => void }) => {
+    e.preventDefault();
+
+    try {
+      const requestBody = {
+        prompt: question,
+        max_tokens: 1500,
+        temperature: 0.2,
+      };
+
+      const response = await api.post("/completions", requestBody);
+      setResponse(response.data.choices[0].text);
+    } catch (error) {
+      console.error("Error:", error);
+    }
+  };
   return (
-    <main className="h-full">
+    <main className="h-screen">
       <section className="bg-secondaryDark h-1/3 flex flex-col gap-2">
         <h1 className="text-5xl pt-3">Let's Get You Interview Ready!</h1>
         <p>
@@ -29,10 +55,17 @@ export const InterviewSimulation = () => {
         </p>
       </section>
       <section>
-        <h2 className="text-3xl">{question}</h2>
+        <h2 className="text-3xl">
+          {
+            interviewQuestions[
+              Math.floor(Math.random() * interviewQuestions.length)
+            ]
+          }
+        </h2>
       </section>
       <section className="flex gap-3 bg-secondaryDark justify-evenly">
         <textarea
+          onChange={(e) => setQuestion(e.target.value)}
           className="w-1/2 bg-primaryDark text-white p-2"
           value={transcript}
           placeholder="Your answer will show here...."
@@ -61,13 +94,15 @@ export const InterviewSimulation = () => {
           <Button buttonType="common" onClick={resetTranscript}>
             Clear Transcript
           </Button>
-          <Button
-            buttonType="submit"
-            onClick={SpeechRecognition.abortListening}
-          >
+          <Button buttonType="submit" onClick={handleSubmit}>
             Submit
           </Button>
         </section>
+      </section>
+
+      <section>
+        <h1>Feedback and Improvements</h1>
+        <p>{response}</p>
       </section>
     </main>
   );

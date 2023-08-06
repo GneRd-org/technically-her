@@ -17,12 +17,12 @@ export const Nav = ({ children }: ChildrenProps) => {
   };
 
   const DropdownMenu = () => (
-    <div className="flex min-h-[64px] items-center justify-end px-3 text-white">
-      <MdLightMode size="25px"/>
+    <div className="flex min-h-[64px] items-center justify-end px-3 text-white bg-secondaryDark">
+      <MdLightMode size="25px" />
       <Menu as="div" className="relative inline-block text-lef">
         <div>
           <Menu.Button className="inline-flex w-full justify-center rounded-md px-4 py-2 text-sm font-medium focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75">
-            <FiMenu size="25px"/>
+            <FiMenu size="25px" />
           </Menu.Button>
         </div>
         <Transition

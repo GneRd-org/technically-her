@@ -1,7 +1,7 @@
 import { BsFillUnlockFill } from "react-icons/bs";
 import { FaGraduationCap } from "react-icons/fa";
 import { FaTrophy } from "react-icons/fa";
-import { Button, Card, Footer } from "../..";
+import { Card, Footer } from "../..";
 import { Learner } from "../../../assets";
 import { AuthService } from "../../../service";
 import { toast } from "react-hot-toast";
@@ -31,9 +31,12 @@ export const Landing = () => {
             Get started on your tech journey with TechnicallyHER, where
             empowerment meets innovation!
           </p>
-          <Button buttonType="common" onClick={() => handleSignIn()}>
+          <button
+            className="rounded-lg py-1.5 px-3 font-semibold bg-[#90CDF4]"
+            onClick={() => handleSignIn()}
+          >
             Get Started
-          </Button>
+          </button>
         </section>
         <img src={Learner} alt="learner" />
       </section>
