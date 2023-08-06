@@ -43,7 +43,7 @@ export const Home = () => {
             className="rounded-lg py-1.5 px-3 font-semibold mt-2 bg-[#90CDF4]"
             onClick={() => navigate("/company-culture")}
           >
-            Prepare for Interviews
+            Find your fit
           </button>
         </section>
       </section>
