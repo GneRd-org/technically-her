@@ -45,7 +45,9 @@ export const InterviewSimulation = () => {
           </Button>
           <Button
             buttonType="stop"
-            onClick={() => SpeechRecognition.stopListening().then()}
+            onClick={() =>
+              SpeechRecognition.stopListening().then((r) => console.log(r))
+            }
           >
             Stop Recording
           </Button>
