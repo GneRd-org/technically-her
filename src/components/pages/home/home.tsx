@@ -13,7 +13,7 @@ export const Home = () => {
           <p>
           Gain the confidence to ace your tech job interviews with our AI-driven interview simulations and personalized coaching. Let's prepare you to stand out and land your dream tech role.
           </p>
-          <Button buttonType={"common"}>Prepare for Interviews</Button>
+          <Button buttonType="common" onClick={()=> void 0}>Prepare for Interviews</Button>
         </section>
         <img src={Interview} alt="Interview picture" width={450}/>
       </section>
@@ -27,7 +27,7 @@ export const Home = () => {
           We understand the importance of finding the right fit for your career. Our culture fit analysis helps you discover tech companies where you'll thrive and contribute your unique strengths.
           </p>
           
-          <Button buttonType={"common"}>Find Your Fit</Button>
+          <Button buttonType="common" onClick={()=> void 0}>Prepare for Interviews</Button>
         </section>
       </section>
       <section className="bg-secondaryDark justify-center flex items-center text-center">
