@@ -16,13 +16,17 @@ export const InterviewSimulation = () => {
   const [question, setQuestion] = useState(
     "If I was asked this question: " +
       "What's a project that you really enjoyed building? " +
-      "Does my answer follow the STAR method? What can I improve? My Anwser:" +
+      "Does my answer follow the STAR method? What can I improve? My Answer:" +
       transcript
   );
-  const [interviewQuestions, setInterviewQuestions] = useState([
+  const interviewQuestions = [
     "What's a project that you really enjoyed building?",
     "Tell me about a challenge or conflict you've faced at work, and how you dealt with it.",
-  ]);
+  ];
+
+  const [askedQuestion, setAskedQuestion] = useState(
+    interviewQuestions[Math.floor(Math.random() * interviewQuestions.length)]
+  );
 
   const [response, setResponse] = useState("");
   if (!browserSupportsSpeechRecognition) {
@@ -58,14 +62,7 @@ export const InterviewSimulation = () => {
 
       <section className="flex gap-3 bg-secondaryDark justify-evenly">
         <section className="">
-          <h2 className="text-xl">
-            Question:{" "}
-            {
-              interviewQuestions[
-                Math.floor(Math.random() * interviewQuestions.length)
-              ]
-            }
-          </h2>
+          <h2 className="text-xl">Question: {askedQuestion}</h2>
           <textarea
             onChange={(e) => setQuestion(e.target.value)}
             className="w-full h-50 bg-primaryDark text-white p-2"
@@ -74,7 +71,7 @@ export const InterviewSimulation = () => {
           ></textarea>
         </section>
         <section className="flex flex-col gap-2">
-          <p>{listening ? "Recording...." : "off"}</p>
+          <p className="text-teal-400">{listening ? "Recording...." : ""}</p>
           <Button
             icon={<BsFillPlayFill size={30} style={{ color: "#0F172A" }} />}
             buttonType="common"
@@ -96,7 +93,13 @@ export const InterviewSimulation = () => {
           <Button buttonType="common" onClick={resetTranscript}>
             Clear Transcript
           </Button>
-          <Button buttonType="submit" onClick={handleSubmit}>
+          <Button
+            buttonType="submit"
+            onClick={() => {
+              setAskedQuestion("");
+              handleSubmit({ preventDefault: () => {} });
+            }}
+          >
             Submit
           </Button>
         </section>
